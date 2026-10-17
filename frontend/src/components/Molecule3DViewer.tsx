@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import type { StructureResponse, Atom3DCoord } from '../types';
 import { fetchMoleculeStructure } from '../api';
+import { getFallbackConformer } from '../conformerFallbacks';
 import { MoleculeViewer } from './MoleculeViewer';
 import { 
   RotateCw, 
@@ -63,12 +64,23 @@ export const Molecule3DViewer: React.FC<Molecule3DViewerProps> = ({
         if (res.success && res.mol_block) {
           setStructure(res);
         } else {
-          setError(res.error || 'Failed to generate 3D conformer');
+          const fallback = getFallbackConformer(smiles);
+          if (fallback) {
+            setStructure(fallback);
+          } else {
+            setError(res.error || 'Failed to generate 3D conformer');
+          }
         }
       })
       .catch((err) => {
         if (!isMounted) return;
-        setError(err.message || 'Conformer service unreachable');
+        const fallback = getFallbackConformer(smiles);
+        if (fallback) {
+          setStructure(fallback);
+          setError(null);
+        } else {
+          setError(err.message || 'Conformer service unreachable');
+        }
       })
       .finally(() => {
         if (isMounted) setLoading(false);

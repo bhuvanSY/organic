@@ -6,57 +6,72 @@ import {
 
 export const DocumentationView: React.FC = () => {
   return (
-    <div className="space-y-12 pb-16 max-w-4xl mx-auto">
+    <div className="space-y-8 pb-16 max-w-6xl w-full mx-auto">
       
       {/* Header */}
-      <div className="border-b border-[#E5E6DE] pb-6">
+      <div className="border-b border-[#E5E6DE] pb-5">
         <span className="text-xs font-mono uppercase tracking-wider text-[#87966A] font-semibold">
           Scientific Whitepaper & User Guide
         </span>
         <h1 className="text-3xl font-extrabold text-[#252820] tracking-tight mt-1">
-          Documentation & Architectural Limitations
+          Documentation & Architectural Boundaries
         </h1>
-        <p className="text-[#5E6356] text-sm mt-1">
+        <p className="text-[#5E6356] text-sm mt-1 max-w-3xl">
           Methodological foundations, chemical assumptions, failure taxonomy, and exact CLI commands to reproduce all findings deterministically.
         </p>
       </div>
 
-      {/* Critical Scientific Disclaimer */}
-      <section className="bg-white rounded-lg border border-[#E5E6DE] p-6 space-y-4">
+      {/* Critical Scientific Disclaimer - 3 Column Layout */}
+      <section className="bg-white rounded-lg border border-[#E5E6DE] p-6 space-y-4 shadow-xs">
         <div className="flex items-center gap-2.5 text-[#B45309] font-mono font-bold text-xs uppercase tracking-wider">
           <AlertTriangle size={16} />
           <span>The Three Tiers of Chemical Verification</span>
         </div>
-        <p className="text-sm text-[#5E6356] leading-relaxed">
+        <p className="text-xs text-[#5E6356] leading-relaxed max-w-3xl">
           ChemRxn-Intelligence enforces a strict epistemological boundary between computational graph processing and wet-lab physical reality:
         </p>
 
-        <div className="space-y-3 pt-2">
-          <div className="p-3.5 rounded bg-[#FAF9F5] border border-[#F0F0EA] space-y-1">
-            <div className="text-xs font-bold font-mono text-[#4D7C0F] uppercase">
-              1. Chemical Syntax Validity
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2">
+          <div className="p-4 rounded-md bg-[#FAF9F5] border border-[#F0F0EA] space-y-1.5 flex flex-col justify-between">
+            <div>
+              <div className="text-xs font-bold font-mono text-[#4D7C0F] uppercase tracking-wide">
+                1. Chemical Syntax Validity
+              </div>
+              <p className="text-xs text-[#5E6356] leading-relaxed mt-2">
+                Verifies that generated SMILES adheres to graph valence rules, ring closures, and aromaticity sanitization inside RDKit.
+              </p>
             </div>
-            <p className="text-xs text-[#5E6356] leading-relaxed">
-              Verifies that a generated SMILES string adheres to graph valence rules, ring closures, and aromaticity sanitization inside RDKit. <strong>A valid syntax does not imply that the reaction physically proceeds.</strong>
-            </p>
+            <div className="text-[11px] font-mono font-semibold text-[#4D7C0F] pt-2 border-t border-[#E5E6DE]/60">
+              Syntax ≠ Wet-lab Feasibility
+            </div>
           </div>
 
-          <div className="p-3.5 rounded bg-[#FAF9F5] border border-[#F0F0EA] space-y-1">
-            <div className="text-xs font-bold font-mono text-[#252820] uppercase">
-              2. Historical Reference Agreement
+          <div className="p-4 rounded-md bg-[#FAF9F5] border border-[#F0F0EA] space-y-1.5 flex flex-col justify-between">
+            <div>
+              <div className="text-xs font-bold font-mono text-[#252820] uppercase tracking-wide">
+                2. Reference Agreement
+              </div>
+              <p className="text-xs text-[#5E6356] leading-relaxed mt-2">
+                Calculates canonicalized string equality against historical patent claims extracted by Daniel Lowe from USPTO reaction literature.
+              </p>
             </div>
-            <p className="text-xs text-[#5E6356] leading-relaxed">
-              Calculates canonicalized string equality against historical patent claims extracted by Daniel Lowe. Concordance indicates the algorithm reproduces documented organic synthetic pathways.
-            </p>
+            <div className="text-[11px] font-mono font-semibold text-[#5E6356] pt-2 border-t border-[#E5E6DE]/60">
+              Concordance with Literature
+            </div>
           </div>
 
-          <div className="p-3.5 rounded bg-[#FAF9F5] border border-[#F0F0EA] space-y-1">
-            <div className="text-xs font-bold font-mono text-[#B45309] uppercase">
-              3. Experimental Wet-Lab Feasibility
+          <div className="p-4 rounded-md bg-[#FAF9F5] border border-[#F0F0EA] space-y-1.5 flex flex-col justify-between">
+            <div>
+              <div className="text-xs font-bold font-mono text-[#B45309] uppercase tracking-wide">
+                3. Wet-Lab Feasibility
+              </div>
+              <p className="text-xs text-[#5E6356] leading-relaxed mt-2">
+                Never claimed without laboratory physical evidence. Reaction yields, kinetic activation barriers, and stereoisomeric purities require physical wet-lab confirmation.
+              </p>
             </div>
-            <p className="text-xs text-[#5E6356] leading-relaxed">
-              <strong>Never claimed without laboratory physical evidence.</strong> Reaction yields, kinetic activation barriers, solvent equilibria, and stereoisomeric purities require physical wet-lab confirmation.
-            </p>
+            <div className="text-[11px] font-mono font-semibold text-[#B45309] pt-2 border-t border-[#E5E6DE]/60">
+              Requires Laboratory Evidence
+            </div>
           </div>
         </div>
       </section>
