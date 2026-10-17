@@ -1,0 +1,6 @@
+model_name,top1_acc_pct,top1_ci_lower,top1_ci_upper,top3_acc_pct,top5_acc_pct,valid_smiles_rate_pct,stereo_aware_acc_pct,abstention_rate_pct,precision_at_coverage_pct,ece,median_latency_ms,throughput_rxn_sec,parameter_count
+Scratch Seq2Seq Transformer,10.0,0.0,25.0,10.0,100.0,10.0,10.0,0.0,10.0,0.15,0.03,27859.87,"5,569,024"
+Classical Baseline (Supervised Ranker),90.0,75.0,100.0,90.0,100.0,90.0,90.0,0.0,90.0,0.15,0.03,28936.21,100 Trees (GBDT)
+Molecular Reaction GNN (MPNN),100.0,100.0,100.0,100.0,100.0,100.0,100.0,0.0,100.0,0.089,0.03,34407.74,"568,450"
+Full Hybrid System (Multi-Modal + Calibrated),0.0,0.0,0.0,0.0,100.0,0.0,0.0,100.0,100.0,0.1965,3531.96,0.28,"6,137,474"
+RL Candidate Selector Policy,100.0,100.0,100.0,100.0,100.0,100.0,100.0,0.0,100.0,0.0014,1.98,68.2,"54,273"

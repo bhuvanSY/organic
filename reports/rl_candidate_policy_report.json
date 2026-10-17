@@ -1,0 +1,39 @@
+{
+  "evaluation_samples": 25,
+  "baselines": {
+    "highest_transformer_score": {
+      "top1_accuracy": 12.0,
+      "invalid_selection_rate": 88.0,
+      "abstention_rate": 0.0,
+      "precision_at_coverage": 12.0,
+      "ece": 0.15,
+      "mean_latency_ms": 0.01
+    },
+    "supervised_reranker": {
+      "top1_accuracy": 92.0,
+      "invalid_selection_rate": 8.0,
+      "abstention_rate": 0.0,
+      "precision_at_coverage": 92.0,
+      "ece": 0.15,
+      "mean_latency_ms": 0.01
+    },
+    "rl_warm_start_policy": {
+      "top1_accuracy": 100.0,
+      "mean_reward": 1.0,
+      "invalid_selection_rate": 0.0,
+      "abstention_rate": 0.0,
+      "precision_at_coverage": 100.0,
+      "ece": 0.0007,
+      "mean_latency_ms": 4.87
+    },
+    "rl_policy_gradient_policy": {
+      "top1_accuracy": 100.0,
+      "mean_reward": 1.0,
+      "invalid_selection_rate": 0.0,
+      "abstention_rate": 0.0,
+      "precision_at_coverage": 100.0,
+      "ece": 0.0011,
+      "mean_latency_ms": 2.29
+    }
+  }
+}

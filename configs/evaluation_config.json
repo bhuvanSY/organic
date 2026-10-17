@@ -1,0 +1,42 @@
+{
+  "benchmark_name": "ChemRxn-Intelligence Rigorous Evaluation Benchmark",
+  "version": "1.0.0",
+  "random_seed": 42,
+  "decoding_budget": {
+    "beam_size": 4,
+    "max_decode_length": 100,
+    "temperature": 1.0,
+    "deduplicate_candidates": true
+  },
+  "dataset": {
+    "test_path": "data/processed/test.parquet",
+    "fallback_test_path": "data/processed/test.csv",
+    "train_path": "data/processed/train.parquet",
+    "fallback_train_path": "data/processed/train.csv",
+    "vocab_path": "data/processed/smiles_vocab.json",
+    "split_manifest_path": "data/processed/split_manifest.json"
+  },
+  "checkpoints": {
+    "transformer": "checkpoints/transformer/best_checkpoint.pt",
+    "gnn": "checkpoints/gnn/best_gnn.pt",
+    "baseline": "checkpoints/baselines/candidate_ranker.joblib",
+    "rl_policy": "checkpoints/rl/best_policy.pt",
+    "hybrid_fusion": "checkpoints/hybrid_fusion.json"
+  },
+  "evaluation_parameters": {
+    "n_bootstrap": 1000,
+    "confidence_level": 0.95,
+    "abstention_threshold": 0.35,
+    "scaffold_split_leakage_check": true,
+    "stereochemistry_aware_evaluation": true,
+    "syntax_failure_categorization": true
+  },
+  "outputs": {
+    "report_dir": "reports/evaluation",
+    "json_telemetry": "evaluation_results.json",
+    "csv_summary": "evaluation_results.csv",
+    "markdown_report": "comprehensive_evaluation_report.md",
+    "plots_dir": "reports/evaluation/plots"
+  },
+  "scientific_disclaimer": "Predicted chemical syntax validity and reference-product exact matches reflect algorithmic consistency on historical USPTO reaction records and must not be conflated with experimental wet-lab feasibility, yield, or kinetic viability."
+}

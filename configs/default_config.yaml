@@ -1,0 +1,62 @@
+system:
+  project_name: "ChemRxn-Intelligence"
+  version: "0.1.0"
+  seed: 42
+  deterministic: true
+  log_level: "INFO"
+  log_file: "logs/chemrxn.log"
+
+hardware:
+  device: "auto"          # "auto", "cuda", or "cpu"
+  cuda_device_id: 0
+  mixed_precision: true   # fp16 for RTX GPUs
+  cudnn_benchmark: false  # true determinism requires false
+  pin_memory: true
+  num_workers: 0          # safe for Windows
+
+data:
+  raw_dir: "ReactionSeq2Seq_Dataset"
+  processed_dir: "data/processed"
+  train_file: "ReactionSeq2Seq_Dataset/US_patents_1976-Sep2016_1product_reactions_train.csv"
+  valid_file: "ReactionSeq2Seq_Dataset/US_patents_1976-Sep2016_1product_reactions_valid.csv"
+  test_file: "ReactionSeq2Seq_Dataset/US_patents_1976-Sep2016_1product_reactions_test.csv"
+  jin_train_file: "ReactionSeq2Seq_Dataset/Jin_USPTO_1product_train.txt"
+  jin_valid_file: "ReactionSeq2Seq_Dataset/Jin_USPTO_1product_valid.txt"
+  jin_test_file: "ReactionSeq2Seq_Dataset/Jin_USPTO_1product_test.txt"
+  max_sequence_length: 160
+  vocab_file: "data/processed/smiles_vocab.json"
+  sample_size_limit: null  # null means full dataset
+  chunk_size: 10000
+
+chemistry:
+  fingerprint_type: "morgan"
+  fingerprint_radius: 2
+  fingerprint_nbits: 2048
+  canonicalize: true
+  remove_atom_mapping: true
+
+model:
+  type: "transformer"    # "transformer" or "fingerprint_mlp"
+  d_model: 256
+  nhead: 8
+  num_encoder_layers: 4
+  num_decoder_layers: 4
+  dim_feedforward: 1024
+  dropout: 0.1
+  init_method: "xavier_uniform"
+
+training:
+  batch_size: 64
+  gradient_accumulation_steps: 2
+  learning_rate: 0.0003
+  weight_decay: 0.0001
+  max_epochs: 20
+  warmup_steps: 1000
+  patience: 5
+  checkpoint_dir: "checkpoints"
+  save_top_k: 3
+
+api:
+  host: "127.0.0.1"
+  port: 8001
+  reload: false

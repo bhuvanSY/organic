@@ -1,0 +1,127 @@
+{
+  "metadata": {
+    "evaluator_version": "1.0.0",
+    "test_samples_evaluated": 20,
+    "beam_size": 4,
+    "n_bootstrap": 1000,
+    "hardware_device": "cuda",
+    "peak_gpu_memory_mb": 108.98,
+    "abstention_threshold": 0.35,
+    "disclaimer": "DISCLAIMER: Chemical syntax validity confirms only that a SMILES string satisfies graph valence and sanitization rules in RDKit. Reference-product agreement measures concordance with historical patent records. Neither metric proves experimental chemical feasibility, selectivity, or synthesis yield in a wet-lab environment."
+  },
+  "model_summaries": [
+    {
+      "model_name": "Scratch Seq2Seq Transformer",
+      "top1_acc_pct": 10.0,
+      "top1_ci_lower": 0.0,
+      "top1_ci_upper": 25.0,
+      "top1_ci_level": 95.0,
+      "top3_acc_pct": 10.0,
+      "top5_acc_pct": 100.0,
+      "stereo_aware_acc_pct": 10.0,
+      "valid_smiles_rate_pct": 10.0,
+      "abstention_rate_pct": 0.0,
+      "precision_at_coverage_pct": 10.0,
+      "ece": 0.15,
+      "median_latency_ms": 0.03,
+      "throughput_rxn_sec": 27859.87,
+      "parameter_count": "5,569,024"
+    },
+    {
+      "model_name": "Classical Baseline (Supervised Ranker)",
+      "top1_acc_pct": 90.0,
+      "top1_ci_lower": 75.0,
+      "top1_ci_upper": 100.0,
+      "top1_ci_level": 95.0,
+      "top3_acc_pct": 90.0,
+      "top5_acc_pct": 100.0,
+      "stereo_aware_acc_pct": 90.0,
+      "valid_smiles_rate_pct": 90.0,
+      "abstention_rate_pct": 0.0,
+      "precision_at_coverage_pct": 90.0,
+      "ece": 0.15,
+      "median_latency_ms": 0.03,
+      "throughput_rxn_sec": 28936.21,
+      "parameter_count": "100 Trees (GBDT)"
+    },
+    {
+      "model_name": "Molecular Reaction GNN (MPNN)",
+      "top1_acc_pct": 100.0,
+      "top1_ci_lower": 100.0,
+      "top1_ci_upper": 100.0,
+      "top1_ci_level": 95.0,
+      "top3_acc_pct": 100.0,
+      "top5_acc_pct": 100.0,
+      "stereo_aware_acc_pct": 100.0,
+      "valid_smiles_rate_pct": 100.0,
+      "abstention_rate_pct": 0.0,
+      "precision_at_coverage_pct": 100.0,
+      "ece": 0.089,
+      "median_latency_ms": 0.03,
+      "throughput_rxn_sec": 34407.74,
+      "parameter_count": "568,450"
+    },
+    {
+      "model_name": "Full Hybrid System (Multi-Modal + Calibrated)",
+      "top1_acc_pct": 0.0,
+      "top1_ci_lower": 0.0,
+      "top1_ci_upper": 0.0,
+      "top1_ci_level": 95.0,
+      "top3_acc_pct": 0.0,
+      "top5_acc_pct": 100.0,
+      "stereo_aware_acc_pct": 0.0,
+      "valid_smiles_rate_pct": 0.0,
+      "abstention_rate_pct": 100.0,
+      "precision_at_coverage_pct": 100.0,
+      "ece": 0.1965,
+      "median_latency_ms": 3531.96,
+      "throughput_rxn_sec": 0.28,
+      "parameter_count": "6,137,474"
+    },
+    {
+      "model_name": "RL Candidate Selector Policy",
+      "top1_acc_pct": 100.0,
+      "top1_ci_lower": 100.0,
+      "top1_ci_upper": 100.0,
+      "top1_ci_level": 95.0,
+      "top3_acc_pct": 100.0,
+      "top5_acc_pct": 100.0,
+      "stereo_aware_acc_pct": 100.0,
+      "valid_smiles_rate_pct": 100.0,
+      "abstention_rate_pct": 0.0,
+      "precision_at_coverage_pct": 100.0,
+      "ece": 0.0014,
+      "median_latency_ms": 1.98,
+      "throughput_rxn_sec": 68.2,
+      "parameter_count": "54,273"
+    }
+  ],
+  "validity_breakdown": {
+    "valid_rate": 0.2,
+    "total_evaluated": 100,
+    "categories": {
+      "VALID": 20,
+      "SYNTAX_ERROR": 64,
+      "VALENCE_VIOLATION": 0,
+      "KEKULIZATION_ERROR": 16,
+      "EMPTY_OR_WHITESPACE": 0
+    },
+    "category_percentages": {
+      "VALID": 20.0,
+      "SYNTAX_ERROR": 64.0,
+      "VALENCE_VIOLATION": 0.0,
+      "KEKULIZATION_ERROR": 16.0,
+      "EMPTY_OR_WHITESPACE": 0.0
+    }
+  },
+  "scaffold_generalization": {
+    "train_scaffold_count": 1,
+    "test_reactions_evaluated": 20,
+    "exact_product_leakage_count": 0,
+    "exact_product_leakage_rate": 0.0,
+    "seen_scaffold_samples": 0,
+    "seen_scaffold_accuracy": 0.0,
+    "unseen_scaffold_samples": 20,
+    "unseen_scaffold_accuracy": 0.0
+  }
+}

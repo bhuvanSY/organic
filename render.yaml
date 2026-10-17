@@ -1,0 +1,18 @@
+# Render Blueprint for ChemRxn-Intelligence Full-Stack Deployment
+# Connects containerized Python/RDKit/PyTorch backend with Vercel frontend
+
+services:
+  - type: web
+    name: chemrxn-backend
+    runtime: docker
+    dockerfilePath: Dockerfile
+    plan: standard
+    region: oregon
+    envVars:
+      - key: PORT
+        value: 8001
+      - key: CORS_ORIGINS
+        value: "https://*.vercel.app,http://localhost:5173,http://localhost:3000"
+      - key: PYTHONUNBUFFERED
+        value: "1"
+    healthCheckPath: /health

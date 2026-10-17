@@ -1,0 +1,101 @@
+{
+  "timestamp": "2026-10-17T12:09:49",
+  "model_architecture": {
+    "d_model": 256,
+    "nhead": 8,
+    "encoder_layers": 4,
+    "decoder_layers": 4,
+    "dim_feedforward": 512,
+    "max_seq_len": 140,
+    "trainable_parameters": 5569024
+  },
+  "hardware": {
+    "cuda_available": true,
+    "torch_version": "2.14.1+cu126",
+    "device_type": "cuda",
+    "device_index": 0,
+    "device_name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "total_memory_gb": 6.0,
+    "allocated_memory_mb": 0.0,
+    "reserved_memory_mb": 0.0,
+    "multi_processor_count": 20,
+    "compute_capability": "8.9",
+    "supports_fp16": true,
+    "supports_bf16": true
+  },
+  "training_config": {
+    "epochs": 3,
+    "batch_size": 64,
+    "grad_accum_steps": 1,
+    "effective_batch_size": 64,
+    "learning_rate": 0.0005,
+    "train_samples": 1000,
+    "val_samples": 200
+  },
+  "final_metrics": {
+    "epoch": 3,
+    "train_loss": 1.2901,
+    "train_token_accuracy": 0.589,
+    "train_time_seconds": 2.27,
+    "samples_per_second": 440.9,
+    "gpu_memory": {
+      "allocated_mb": 85.26,
+      "reserved_mb": 2086.67,
+      "max_allocated_mb": 1941.65
+    },
+    "val_loss": 1.3157,
+    "val_token_accuracy": 0.5831,
+    "val_time_seconds": 0.15,
+    "is_best": true
+  },
+  "training_history": [
+    {
+      "epoch": 1,
+      "train_loss": 2.3586,
+      "train_token_accuracy": 0.483,
+      "train_time_seconds": 2.75,
+      "samples_per_second": 364.3,
+      "gpu_memory": {
+        "allocated_mb": 85.26,
+        "reserved_mb": 2086.67,
+        "max_allocated_mb": 1941.65
+      },
+      "val_loss": 1.4453,
+      "val_token_accuracy": 0.5714,
+      "val_time_seconds": 0.16,
+      "is_best": true
+    },
+    {
+      "epoch": 2,
+      "train_loss": 1.3477,
+      "train_token_accuracy": 0.5869,
+      "train_time_seconds": 2.27,
+      "samples_per_second": 441.3,
+      "gpu_memory": {
+        "allocated_mb": 85.26,
+        "reserved_mb": 2086.67,
+        "max_allocated_mb": 1941.65
+      },
+      "val_loss": 1.3318,
+      "val_token_accuracy": 0.5831,
+      "val_time_seconds": 0.15,
+      "is_best": true
+    },
+    {
+      "epoch": 3,
+      "train_loss": 1.2901,
+      "train_token_accuracy": 0.589,
+      "train_time_seconds": 2.27,
+      "samples_per_second": 440.9,
+      "gpu_memory": {
+        "allocated_mb": 85.26,
+        "reserved_mb": 2086.67,
+        "max_allocated_mb": 1941.65
+      },
+      "val_loss": 1.3157,
+      "val_token_accuracy": 0.5831,
+      "val_time_seconds": 0.15,
+      "is_best": true
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "num_evaluated_reactions": 25,
+  "beam_size": 4,
+  "abstention_threshold": 0.35,
+  "average_latency_ms": 2586.13,
+  "expected_calibration_error_ece": 0.12,
+  "abstention_rate_pct": 100.0,
+  "precision_at_coverage_pct": 0.0,
+  "models": {
+    "transformer_only": {
+      "top1": 68.0,
+      "top3": 68.0,
+      "top5": 100.0,
+      "mrr": 0.744
+    },
+    "graph_only": {
+      "top1": 100.0,
+      "top3": 100.0,
+      "top5": 100.0,
+      "mrr": 1.0
+    },
+    "baseline_only": {
+      "top1": 100.0,
+      "top3": 100.0,
+      "top5": 100.0,
+      "mrr": 1.0
+    },
+    "hybrid_no_rc_consistency": {
+      "top1": 100.0,
+      "top3": 100.0,
+      "top5": 100.0,
+      "mrr": 1.0
+    },
+    "full_hybrid_system": {
+      "top1": 100.0,
+      "top3": 100.0,
+      "top5": 100.0,
+      "mrr": 1.0
+    }
+  }
+}
