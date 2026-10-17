@@ -19,7 +19,7 @@ export const LandingView: React.FC<LandingViewProps> = ({ onNavigate }) => {
       
       {/* Hero Section */}
       <section className="relative pt-8 pb-12 border-b border-[#E5E6DE]">
-        <div className="max-w-4xl">
+        <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#F2F5ED] border border-[#B6C49A]/50 text-xs font-mono font-medium text-[#4D7C0F] mb-6">
             <span className="w-1.5 h-1.5 rounded-full bg-[#87966A]" />
             Rigorous Scientific Reaction Modeling — USPTO Stereo Mixed Split
@@ -29,11 +29,11 @@ export const LandingView: React.FC<LandingViewProps> = ({ onNavigate }) => {
             Predict forward organic reactions with calibrated structural confidence.
           </h1>
 
-          <p className="text-lg sm:text-xl text-[#5E6356] leading-relaxed mb-8 max-w-3xl">
+          <p className="text-base sm:text-lg text-[#5E6356] leading-relaxed mb-8 max-w-2xl mx-auto">
             ChemRxn-Intelligence pairs an independently trained scratch Seq2Seq Transformer with a Molecular Graph Neural Network and a Platt-calibrated candidate selector. Chemical validity is strictly enforced via RDKit rather than raw neural heuristics.
           </p>
 
-          <div className="flex flex-wrap items-center gap-4">
+          <div className="flex flex-wrap items-center justify-center gap-4">
             <button
               onClick={() => onNavigate('workbench')}
               className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-md bg-[#87966A] hover:bg-[#6E7C54] text-white font-medium text-sm shadow-sm transition-all"

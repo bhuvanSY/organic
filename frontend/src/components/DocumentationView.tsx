@@ -78,9 +78,14 @@ export const DocumentationView: React.FC = () => {
 
       {/* Architectural Boundaries & Limitations */}
       <section className="space-y-4">
-        <h2 className="text-xl font-bold text-[#252820]">
-          Known Architectural Boundaries
-        </h2>
+        <div className="text-center">
+          <h2 className="text-2xl font-bold text-[#252820]">
+            Known Architectural Boundaries
+          </h2>
+          <p className="text-xs text-[#5E6356] mt-1 max-w-xl mx-auto">
+            Scientific constraints, data limitations, and physical scope governing the predictions.
+          </p>
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="bg-white p-5 rounded-lg border border-[#E5E6DE] space-y-2">
             <h3 className="text-xs font-bold font-mono uppercase tracking-wider text-[#252820]">
