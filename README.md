@@ -1,5 +1,10 @@
 # ChemRxn-Intelligence
 
+[![Live Vercel Frontend](https://img.shields.io/badge/Vercel-Live%20Frontend-brightgreen)](https://frontend-weld-eight-88.vercel.app)
+[![GitHub Repository](https://img.shields.io/badge/GitHub-bhuvanSY%2Forganic-blue)](https://github.com/bhuvanSY/organic)
+
+**Live Production Frontend**: [https://frontend-weld-eight-88.vercel.app](https://frontend-weld-eight-88.vercel.app)
+
 > Organic Reaction Prediction Research Platform using Reactant SMILES as input.
 
 Built from first principles for chemical synthesis research, ChemRxn-Intelligence translates reactant SMILES into predicted product SMILES and molecular fingerprints using custom neural architectures with randomly initialized weights (strictly zero pretrained chemical models or hosted APIs).
